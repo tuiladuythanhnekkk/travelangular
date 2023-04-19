@@ -40,33 +40,58 @@ let database = [
   { "BookId": "b4", "BookName": "Máy học nâng cao", "Price": 300, "image": "b4.png" },
   { "BookId": "b5", "BookName": "Lập trình Robot cơ bản", "Price": 250, "image": "b5.jpg" },
 ]
-app.get("/books", cors(), (req, res) => {
-  res.send(database)
+
+let destinations = [
+  {
+    "destiID": "destinationHCM",
+    "destiName": "TP HCM"
+  },
+  {
+    "destiID": "destinationDALAT",
+    "destiName": "Đà Lạt"
+  },
+  {
+    "destiID": "destinationDANANG",
+    "destiName": "Đà Nẵng"
+  },
+  {
+    "destiID": "destinationHANOI",
+    "destiName": "Hà Nội"
+  },
+  {
+    "destiID": "destinationNHATRANG",
+    "destiName": "Nha Trang"
+  }
+]
+
+
+app.get("/destinations", cors() , ( req, res) => {
+  res.send(destinations)
 })
 
-app.get("/books/:id", cors(), (req, res) => {
-  id = req.params["id"];
-  let p = database.find(x => x.BookId == id)
-  res.send(p)
-})
+// app.get("/books", cors(), (req, res) => {
+//   res.send(database)
+// })
 
-app.get("/books/:minPrice/:maxPrice", cors(), (req, res) => {
-  console.log(req.params.minPrice, req.params.maxPrice)
-  let p = database.filter(
-    x => x.Price >= req.params.minPrice
-      &&
-      x.Price <= req.params.maxPrice)
-  res.send(p)
-})
+// app.get("/books/:id", cors(), (req, res) => {
+//   id = req.params["id"];
+//   let p = database.find(x => x.BookId == id)
+//   res.send(p)
+// })
 
+// app.get("/books/:minPrice/:maxPrice", cors(), (req, res) => {
+//   console.log(req.params.minPrice, req.params.maxPrice)
+//   let p = database.filter(
+//     x => x.Price >= req.params.minPrice
+//       &&
+//       x.Price <= req.params.maxPrice)
+//   res.send(p)
+// })
 
-// m5-post-createbook
-const bodyParser = require("body-parser")
-app.use(bodyParser.json())
+// const bodyParser = require("body-parser")
+// app.use(bodyParser.json())
 
-app.post("/books", cors(), (req,res) => {
-  //put json book into database
-  database.push(req.body);
-  //send message to client(send all database to client)
-  res.send(database)
-})
+// app.post("/books", cors(), (req,res) => {
+//   database.push(req.body);
+//   res.send(database)
+// })
