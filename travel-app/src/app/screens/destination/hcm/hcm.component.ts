@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./hcm.component.css']
 })
 export class HCMComponent {
+  destinationName: any = "TP Hồ Chí Minh";
+
 
 }
