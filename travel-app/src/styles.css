@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  /* --primary-color: #F5C909; */
+  --primary-color: #ffae00;
+  --container-bgcolor:#fffdf8;
+  --categorymenu-bgcolor: #fcfcfcce;
+
+  --star-size: 60px;
+  --star-color: #fff;
+  --star-background: #fc0;
+
+}
