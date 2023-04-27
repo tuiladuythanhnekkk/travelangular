@@ -7,10 +7,13 @@
     z-index: 1030; */
     /* paddingh-bottom: 100px; */
   }
-  .nav-left, .nav-right {
+
+  .nav-left,
+  .nav-right {
     height: 40px;
     margin: 0.2rem 0;
   }
+
   .navbar-brand {
     color: var(--primary-color);
     font-weight: 500;
@@ -51,15 +54,18 @@
     width: 300px;
     margin-left: 1rem;
   }
+
   .searchbox:hover {
     border: 1px solid var(--primary-color);
     background-color: #FFF;
 
   }
+
   .searchbox input:focus {
     box-shadow: none;
 
   }
+
   .searchbox input {
     outline: none;
     border: none;
@@ -67,9 +73,19 @@
     padding: 8px 8px 8px 0px;
     font-size: 0.85rem;
   }
+
   ion-icon {
     font-size: 1.1rem;
     line-height: 100%;
+  }
+
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
   }
 </style>
 <nav class="navbar" style="background-color: #FFF; box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);">
@@ -83,7 +99,7 @@
 
       <form class="searchbox">
         <button class="btn btn-outline my-2 my-sm-0" type="submit" style="display: flex; align-items: center;">
-          <ion-icon name="search-outline" ></ion-icon>
+          <ion-icon name="search-outline"></ion-icon>
         </button>
         <input class="form-control mr-sm-2" type="search" placeholder="Tìm theo điểm đến, hoạt động">
       </form>
@@ -96,6 +112,22 @@
         <li class="nav-item">
           <a class="nav-link" href="/homepage">Trang chủ</a>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" type="button" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+            aria-expanded="false">
+            Khám phá Việt Nam
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="/destinationHCM">Thành phố Hồ Chí Minh</a></li>
+            <li><a class="dropdown-item" href="/destinationDALAT">Đà Lạt</a></li>
+            <li><a class="dropdown-item" href="/destinationNHATRANG">Nha Trang</a></li>
+            <li><a class="dropdown-item" href="/destinationDANANG">Đà Nẵng</a></li>
+            <li><a class="dropdown-item" href="/destinationHANOI">Hà Nội</a></li>
+          </ul>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/support">Trợ giúp</a>
         </li>
